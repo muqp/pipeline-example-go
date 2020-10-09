@@ -1,0 +1,31 @@
+
+Showing logs for build [32mmuqp-pipeline-example-go-master-5r86s-4[0m stage [32mfrom-build-pack[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1602256616.734053,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mmuqp-pipeline-example-go-master-5r86s-4[0m stage [32mfrom-build-pack[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mmuqp-pipeline-example-go-master-5r86s-4[0m stage [32mfrom-build-pack[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mmuqp-pipeline-example-go-master-5r86s-4[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-muqp-pipeline-example-go-master-5r86s-4tccm[0m
+{"level":"info","ts":1602256697.358685,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/****/pipeline-example-go.git @ v0.0.4 in path /workspace/source"}
+{"level":"warn","ts":1602256697.3590164,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1602256697.450481,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mmuqp-pipeline-example-go-master-5r86s-4[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mmuqp-pipeline-example-go-master-5r86s-4[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mmuqp-pipeline-example-go-master-5r86s-4[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mmuqp-pipeline-example-go-master-5r86s-4[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/pipeline-example-go main.go
+
+Showing logs for build [32mmuqp-pipeline-example-go-master-5r86s-4[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+E1009 15:18:55.570681      11 aws_credentials.go:77] while getting AWS credentials NoCredentialProviders: no valid providers in chain. Deprecated.
+	For verbose messaging see aws.Config.CredentialsChainVerboseErrors
+error checking push permissions -- make sure you entered the correct tag name, and that you are authenticated correctly, and try again: checking push permission for "http://10.108.11.23/****/pipeline-example-go:0.0.4": creating push check transport for http: failed: Get "https://http/v2/": dial tcp: lookup http on 10.43.0.10:53: no such host
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-container-build'. The execution of the pipeline has stopped.[0m
